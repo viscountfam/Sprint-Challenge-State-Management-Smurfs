@@ -16,6 +16,12 @@ const initialState = {
         "height": "7cm",
         "id": 5301
     }],
+    newSmurf: {
+        name: "",
+        age: "",
+        height: "",
+        id: Date.now()
+    },
     error: '',
     postError: ''
 }
