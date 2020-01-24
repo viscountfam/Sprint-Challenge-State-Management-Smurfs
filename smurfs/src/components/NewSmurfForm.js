@@ -22,14 +22,13 @@ import { PostSmurfs } from '../actions'
             id: Date.now()
         })
     }
-    const submit = event => {
-        event.preventDefault();
+    const submit = () => {
+        console.log("new Smurf directly before being sent as an action", newSmurf)
         props.PostSmurfs(newSmurf);
-        resetForm();
+        // resetForm();
     }
     return (
         <div>
-            <form>
             <input 
                 type="text"
                 name="name"
@@ -47,12 +46,11 @@ import { PostSmurfs } from '../actions'
             <input
                 type="text"
                 name="height"
-                value={newSmurf.age}
+                value={newSmurf.height}
                 onChange={handleChange}
                 placeholder="height"
             />
             <button onClick={() => {submit()}}>Submit new smurf</button>
-            </form> 
         </div>
     );
 };
