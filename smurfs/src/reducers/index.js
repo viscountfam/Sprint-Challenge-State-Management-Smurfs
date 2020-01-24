@@ -4,7 +4,8 @@ import {
     FETCHING_SMURFS_FAILURE,
     POSTING_SMURFS_START,
     POSTING_SMURFS_SUCCESS,
-    POSTING_SMURFS_FAILURE
+    POSTING_SMURFS_FAILURE,
+    REMOVE_SMURFS
 } from '../actions'
 
 
@@ -57,6 +58,12 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 postError: action.payload
+            }
+        case REMOVE_SMURFS:
+            return {
+                ...state,
+                smurfArray: state.smurfArray.filter(smurf =>
+                    smurf.id !== action.payload)
             }
         default:
             return state

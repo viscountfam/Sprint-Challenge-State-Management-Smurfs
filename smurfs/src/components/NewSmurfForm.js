@@ -25,7 +25,7 @@ import { PostSmurfs } from '../actions'
     const submit = () => {
         console.log("new Smurf directly before being sent as an action", newSmurf)
         props.PostSmurfs(newSmurf);
-        // resetForm();
+         resetForm();
     }
     return (
         <div>
